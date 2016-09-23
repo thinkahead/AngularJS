@@ -1,0 +1,17 @@
+.message {
+  border: 1px solid white;
+  border-radius: 4px;
+  padding: 4px;
+  display: inline;
+}
+.green {
+  color: #008500;
+  border-color: #008500;
+  background-color: #7ae969;
+}
+
+.red {
+  color: #a60000;
+  border-color: #a60000;
+  background-color: #ff7373;
+}
