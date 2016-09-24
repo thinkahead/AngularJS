@@ -8,7 +8,7 @@ angular.module('ShoppingListCheckOff', [])
 
 ToBuyShoppingController.$inject = ['ShoppingListCheckOffService'];
 function ToBuyShoppingController(ShoppingListCheckOffService) {
-  list1=this
+  var list1=this
   list1.removeItem = function (itemIndex) {
     ShoppingListCheckOffService.switchItem(itemIndex);
   };
