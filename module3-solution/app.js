@@ -6,7 +6,7 @@ angular.module('NarrowItDownController', [])
 .service('MenuSearchService',MenuSearchService)
 .factory('NarrowItDownFactory', NarrowItDownFactory)
 .directive('foundItems', NarrowItDownDirective)
-.constant('ApiBasePath', "http://davids-restaurant.herokuapp.com")
+.constant('ApiBasePath', "https://davids-restaurant.herokuapp.com")
 
 function NarrowItDownDirective() {
   var ddo = {
