@@ -19,7 +19,7 @@
             <button ng-click="list.addItem()" class="btn btn-primary">Narrow It Down For Me!</button>
         </div>
         <p>
-        <div class="p">
+        <div ng-if="list.lastRemoved!=''" class="info">
             {{ list.lastRemoved }}
         </div>
 

@@ -12,6 +12,11 @@ input[type="text"] {
 h3 {
   clear:left
 }
+.info {
+  clear: left;
+  color: green;
+  font-size: 12px;
+}
 .main {
   margin-left: 5px;
   font-size: 12px;
@@ -43,7 +48,9 @@ h3 {
   height: 3em;
 }
 .error {
+  clear: left;
   color: red;
+  margin-left: 5px;
   font-weight: bold;
 }
 @-webkit-keyframes load8 {

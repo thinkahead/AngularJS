@@ -1,5 +1,5 @@
+<div ng-if="list.items.length>0" class='main'>
 <h3>{{ list.myTitle }}</h3>
-<div class='main'>
 <ol>
   <li ng-repeat="item in list.items">
     {{ item.name }}
@@ -7,4 +7,4 @@
   </li>
 </ol>
 </div>
-<div class="error" ng-if="list.error()">ERROR RETRIEVING DATA</div>
+<div class="error" ng-if="list.items.length==0">Nothing Found</div>

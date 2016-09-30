@@ -56,8 +56,9 @@ function NarrowItDownController(NarrowItDownFactory,MenuSearchService) {
     
       tempitems.forEach( function(tempitem) { 
          //console.log(tempitem.name+", "+tempitem.short_name+", "+tempitem.description); //console.log(tempitem);
-         if (list.searchTerm=="" || tempitem.name.toLowerCase().indexOf(list.searchTerm.toLowerCase())>=0 || tempitem.short_name.toLowerCase().indexOf(list.searchTerm.toLowerCase())>=0 || tempitem.description.toLowerCase().indexOf(list.searchTerm.toLowerCase())>=0)
-             menuList.addItem(tempitem.name+", "+tempitem.short_name+", "+tempitem.description); 
+         if (list.searchTerm!="")
+             if (tempitem.name.toLowerCase().indexOf(list.searchTerm.toLowerCase())>=0 || tempitem.short_name.toLowerCase().indexOf(list.searchTerm.toLowerCase())>=0 || tempitem.description.toLowerCase().indexOf(list.searchTerm.toLowerCase())>=0)
+                 menuList.addItem(tempitem.name+", "+tempitem.short_name+", "+tempitem.description); 
          list.items = menuList.getItems();
          list.title = origTitle + " Search: " + list.searchTerm + " ("+ list.items.length + " items)";
       });
@@ -74,7 +75,7 @@ function NarrowItDownController(NarrowItDownFactory,MenuSearchService) {
     list.title = origTitle + " Search: " + list.searchTerm + " modified ("+ list.items.length + " items)";
   };
 
-  list.addItem();
+  //list.addItem();
 
 }
 
