@@ -26,16 +26,18 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     controller: 'MenuCategoriesController as mainList',
     resolve: {
       categories: ['MenuDataService', function (MenuDataService) {
-        return MenuDataService.getAllCategories();
-      }]
+              console.log("Retrieving all categories");
+              return MenuDataService.getAllCategories()
+                .then(function (categories) {
+                  console.log("Retrieved",categories.data);
+                  return categories.data;
+                });
+            }]
+
     }
   })
 
   // Menu Items page
-  //.state('itemDetail', {
-    //url: '/item-detail/{itemId}',
-    //templateUrl: 'src/categories/templates/item-detail.template.html',
-    //controller: 'ItemDetailController as itemDetail',
   .state('itemList', {
     url: '/item-list/{itemId}',
     templateUrl: 'src/items/templates/main-items.template.html',
