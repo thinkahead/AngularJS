@@ -1,0 +1,76 @@
+<div class="container">
+  <div class="row">
+
+    <div ng-controller="SignUpController as signupCtrl">
+      <h1>Sign Up</h1>
+
+      <fieldset class="form-group">
+        <legend>Registration</legend>
+        <form name='registrationForm' novalidate>
+
+          <input type="text" name="firstname" placeholder="First name" class="form-control"
+            ng-model="signupCtrl.user.firstname"
+            required
+            minlength="1"
+            ng-maxlength="20">
+            {{ signupCtrl.user.firstname }}
+            <span
+              ng-if="(registrationForm.firstname.$error.minlength || registrationForm.firstname.$error.required) && registrationForm.firstname.$touched">
+              First name must be at least 1 characters long
+            </span>
+            <span ng-if="registrationForm.firstname.$error.maxlength && registrationForm.firstname.$touched">
+              First name must not be longer than 20 characters
+            </span>
+            <br>
+
+          <input type="text" name="lastname" placeholder="Last name" class="form-control"
+            ng-model="signupCtrl.user.lastname"
+            required
+            minlength="1"
+            ng-maxlength="20">
+            {{ signupCtrl.user.lastname }}
+            <span
+              ng-if="(registrationForm.lastname.$error.minlength || registrationForm.lastname.$error.required) && registrationForm.lastname.$touched">
+              Last name must be at least 1 characters long
+            </span>
+            <span ng-if="registrationForm.lastname.$error.maxlength && registrationForm.lastname.$touched">
+              Last name must not be longer than 20 characters
+            </span>
+            <br>
+
+          <input type="email" name="email" placeholder="Email" class="form-control"
+            ng-model="signupCtrl.user.email"
+            required>
+            <span ng-if="registrationForm.email.$invalid && registrationForm.email.$touched">
+              Must be a valid email address: handle@domain format
+            </span>
+            <br>
+
+          <input type="text" name="phone" placeholder="Phone ###-###-####" class="form-control"
+            ng-model="signupCtrl.user.phone"
+            pattern="(\d{3})-(\d{3})-(\d{4})">
+            <span ng-if="registrationForm.phone.$invalid && registrationForm.phone.$touched">
+              Phone must be in the format ###-###-####.
+            </span>
+            <br>
+
+          <input type="text" name="short_name" placeholder="Short name" class="form-control"
+            ng-model="signupCtrl.user.short_name"
+            required>
+            <br>
+
+          <input type="submit" value="SignUp"
+            ng-disabled="registrationForm.$invalid"
+            class="btn btn-primary"
+            ng-click="signupCtrl.submit()">
+
+          <div>
+            {{ signupCtrl.report }}
+          </div>
+
+        </form>
+      </fieldset>
+
+    </div>
+  </div>
+</div>
